@@ -17,6 +17,6 @@ jobs:
         uses: AndreasAugustin/actions-template-sync@v0.8.0
         with:
           source_repo_path: medusajs/nextjs-starter-medusa
-          upstream_branch: main
+          upstream_branch: develop
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - run: echo "Template synced ${{ job.status }}"
