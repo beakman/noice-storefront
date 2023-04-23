@@ -13,10 +13,8 @@ jobs:
       - run: echo "🎉 The sync job is started"
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@v0.7.3
+        uses: AndreasAugustin/actions-template-sync@v0.8.0
         with:
           source_repo_path: medusajs/nextjs-starter-medusa
           upstream_branch: main
