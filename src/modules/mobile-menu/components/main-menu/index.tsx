@@ -8,6 +8,8 @@ import { useCollections, useMeCustomer } from "medusa-react"
 import Link from "next/link"
 import ReactCountryFlag from "react-country-flag"
 
+const store = require("../../../../../store.config.json")
+
 const MainMenu = () => {
   const { collections } = useCollections()
   const { customer } = useMeCustomer()
@@ -36,7 +38,7 @@ const MainMenu = () => {
           </button>
         </div>
         <div>
-          <h1 className="text-xl-semi uppercase">Acme</h1>
+          <h1 className="text-xl-semi uppercase">{store.site.name}</h1>
         </div>
         <div className="flex-1 basis-0 flex justify-end">
           <button onClick={close}>

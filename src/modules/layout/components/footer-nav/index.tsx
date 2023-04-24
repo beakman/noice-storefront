@@ -3,6 +3,8 @@ import { useCollections } from "medusa-react"
 import Link from "next/link"
 import CountrySelect from "../country-select"
 
+const store = require("../../../../../store.config.json")
+
 const FooterNav = () => {
   const { collections } = useCollections()
 
@@ -11,7 +13,7 @@ const FooterNav = () => {
       <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between">
         <div>
           <Link href="/">
-            <a className="text-xl-semi uppercase">Acme</a>
+            <a className="text-xl-semi uppercase">{store.site.name}</a>
           </Link>
         </div>
         <div className="text-small-regular grid grid-cols-2 gap-x-16">
