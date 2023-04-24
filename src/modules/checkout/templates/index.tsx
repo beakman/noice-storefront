@@ -6,7 +6,7 @@ import CheckoutLoader from "../components/checkout-loader"
 import CheckoutForm from "./checkout-form"
 import CheckoutSummary from "./checkout-summary"
 
-const store = require("../../../../../store.config.json")
+const store = require("../../../../store.config.json")
 
 const CheckoutTemplate = () => {
   return (
