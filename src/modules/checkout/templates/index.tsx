@@ -6,6 +6,8 @@ import CheckoutLoader from "../components/checkout-loader"
 import CheckoutForm from "./checkout-form"
 import CheckoutSummary from "./checkout-summary"
 
+const store = require("../../../../../store.config.json")
+
 const CheckoutTemplate = () => {
   return (
     <CheckoutProvider>
@@ -22,7 +24,7 @@ const CheckoutTemplate = () => {
               </a>
             </Link>
             <Link href="/">
-              <a className="text-xl-semi">ACME</a>
+              <a className="text-xl-semi">{store.site.name}</a>
             </Link>
             <div className="flex-1 basis-0" />
           </nav>
