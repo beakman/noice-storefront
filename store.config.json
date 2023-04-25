@@ -4,6 +4,6 @@
     "description": ""
   },
   "features": {
-    "search": false
+    "search": true
   }
 }
