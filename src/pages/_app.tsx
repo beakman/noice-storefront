@@ -8,6 +8,10 @@ import { CartProvider, MedusaProvider } from "medusa-react"
 import "styles/globals.css"
 import { AppPropsWithLayout } from "types/global"
 
+import { Inter } from "next/font/google"
+
+const inter = Inter({ subsets: ["latin"] })
+
 function App({
   Component,
   pageProps,
@@ -27,7 +31,11 @@ function App({
             <CartProvider>
               <StoreProvider>
                 <AccountProvider>
-                  {getLayout(<Component {...pageProps} />)}
+                  {getLayout(
+                    <main className={inter.className}>
+                      <Component {...pageProps} />
+                    </main>
+                  )}
                 </AccountProvider>
               </StoreProvider>
             </CartProvider>
