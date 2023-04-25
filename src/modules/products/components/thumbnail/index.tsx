@@ -36,15 +36,15 @@ const ImageOrPlaceholder = ({
   size,
 }: Pick<ThumbnailProps, "size"> & { image?: string }) => {
   return image ? (
-    <Image
-      src={image}
-      alt="Thumbnail"
-      layout="fill"
-      objectFit="cover"
-      objectPosition="center"
-      className="absolute inset-0 transition duration-300 ease-in-out hover:scale-110"
-      draggable={false}
-    />
+    <div className="overflow-hidden">
+      <Image
+        src={image}
+        alt="Thumbnail"
+        fill
+        className="absolute inset-0 transition duration-300 ease-in-out object-cover hover:scale-110"
+        draggable={false}
+      />
+    </div>
   ) : (
     <div className="w-full h-full absolute inset-0 bg-gray-100 flex items-center justify-center">
       <PlaceholderImage size={size === "small" ? 16 : 24} />
