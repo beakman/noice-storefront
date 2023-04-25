@@ -3,6 +3,21 @@
     "name": "Acme",
     "description": ""
   },
+  "social": {
+    "twitter": "https://twitter.com/medusajs",
+    "instagram": "https://instagram.com/medusajs",
+    "facebook": "https://facebook.com/medusajs",
+    "pinterest": "https://instagram.com/medusajs",
+    "tiktok": "https://instagram.com/medusajs"
+  },
+  "payment": {
+    "visa": "/payment-icons/Credit Card/Visa/Visa-card-dark.svg",
+    "mastercard": "/payment-icons/Credit Card/MasterCard/MasterCard-dark.svg",
+    "amex": "/payment-icons/Credit Card/AmericanExpress/AmericanExpress-dark.svg",
+    "paypal": "/payment-icons/Payment/PayPal/Paypal-card-dark.svg",
+    "discover": "/payment-icons/Credit Card/Discover/Discover-card-dark.svg",
+    "dinners": "/payment-icons/Credit Card/DinersClub/DinersClub-dark.svg"
+  },
   "features": {
     "search": true
   }
