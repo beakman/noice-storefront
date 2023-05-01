@@ -6,6 +6,7 @@ import DesktopHit from "@modules/search/components/desktop-hit"
 import DesktopHits from "@modules/search/components/desktop-hits"
 import SearchBox from "@modules/search/components/search-box"
 import { InstantSearch } from "react-instantsearch-hooks-web"
+import { HiOutlineSearch } from "react-icons/hi"
 
 const DesktopSearchModal = () => {
   const { state, close, open } = useToggleState()
@@ -13,8 +14,7 @@ const DesktopSearchModal = () => {
   return (
     <>
       <button onClick={open} className="flex items-center gap-x-2 h-full">
-        <Search />
-        Search
+        <HiOutlineSearch size={20} />
       </button>
 
       <Modal isOpen={state} close={close} size="large">

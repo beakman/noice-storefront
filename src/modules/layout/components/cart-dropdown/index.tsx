@@ -10,6 +10,8 @@ import Thumbnail from "@modules/products/components/thumbnail"
 import { formatAmount, useCart } from "medusa-react"
 import Link from "next/link"
 import { Fragment } from "react"
+import { HiOutlineShoppingBag } from "react-icons/hi"
+import { Badge } from "@nextui-org/react"
 
 const CartDropdown = () => {
   const { cart, totalItems } = useCart()
@@ -21,7 +23,11 @@ const CartDropdown = () => {
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Link href="/cart" passHref legacyBehavior>
-          <Popover.Button className="h-full">{`My Bag (${totalItems})`}</Popover.Button>
+          <Badge color="default" content={totalItems} placement="bottom-right">
+            <Popover.Button className="h-full">
+              <HiOutlineShoppingBag size={20} />
+            </Popover.Button>
+          </Badge>
         </Link>
         <Transition
           show={state}
@@ -108,9 +114,7 @@ const CartDropdown = () => {
                     </span>
                   </div>
                   <Link href="/cart" passHref>
-
                     <Button>Go to bag</Button>
-
                   </Link>
                 </div>
               </>
@@ -123,10 +127,8 @@ const CartDropdown = () => {
                   <span>Your shopping bag is empty.</span>
                   <div>
                     <Link href="/store">
-
                       <span className="sr-only">Go to all products page</span>
                       <Button onClick={close}>Explore products</Button>
-
                     </Link>
                   </div>
                 </div>
@@ -136,7 +138,7 @@ const CartDropdown = () => {
         </Transition>
       </Popover>
     </div>
-  );
+  )
 }
 
 export default CartDropdown

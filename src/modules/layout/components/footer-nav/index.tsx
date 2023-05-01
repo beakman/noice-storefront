@@ -7,6 +7,12 @@ import SocialIcons from "../social-icons"
 
 const store = require("../../../../../store.config.json")
 
+type QuickLink = {
+  href: string
+  target: string
+  name: string
+}
+
 const FooterNav = () => {
   const { collections } = useCollections()
 
@@ -22,41 +28,19 @@ const FooterNav = () => {
           <div className="flex flex-col gap-y-2">
             <span className="text-base-semi">Quick links</span>
             <ul className="grid grid-cols-1 gap-y-2">
-              <li>
-                <a
-                  href="https://github.com/medusajs"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://docs.medusajs.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/medusajs/nextjs-starter-medusa"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source code
-                </a>
-              </li>
+              {store.site.quick_links &&
+                store.site.quick_links.map((link: QuickLink) => (
+                  <li className="mb-0">
+                    <a href={link.href} target={link.target} rel="noreferrer">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
             </ul>
           </div>
           <div className="flex flex-col gap-y-2">
             <span className="text-base-semi">Our mission</span>
-            <p>
-              Provide unique, edgy, and fashion-forward clothing that empowers
-              our customers to express themselves and stand out from the crowd.
-            </p>
+            <p>{store.site.mission}</p>
           </div>
         </div>
       </div>

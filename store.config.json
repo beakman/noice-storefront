@@ -1,7 +1,20 @@
 {
   "site": {
     "name": "Acme",
-    "description": ""
+    "description": "",
+    "mission": "Provide unique, edgy, and fashion-forward clothing that empowers our customers to express themselves and stand out from the crowd.",
+    "quick_links": [
+      {
+        "href": "https://github.com/beakman/noice-storefront",
+        "target": "_blank",
+        "name": "Github"
+      },
+      {
+        "href": "https://dev.to/turboplebeian",
+        "target": "_blank",
+        "name": "Blog"
+      }
+    ]
   },
   "social": {
     "twitter": "https://twitter.com/medusajs",

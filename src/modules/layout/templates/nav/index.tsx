@@ -8,6 +8,7 @@ import clsx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import { HiOutlineUser } from "react-icons/hi"
 
 const store = require("../../../../../store.config.json")
 
@@ -82,7 +83,7 @@ const Nav = () => {
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
               <Link href="/account">
-                Account
+                <HiOutlineUser size={20} />
               </Link>
             </div>
             <CartDropdown />
@@ -91,7 +92,7 @@ const Nav = () => {
         <MobileMenu />
       </header>
     </div>
-  );
+  )
 }
 
 export default Nav

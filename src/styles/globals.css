@@ -109,4 +109,8 @@
   .text-3xl-semi {
     @apply text-[36px] leading-[48px] font-semibold;
   }
+
+  .h1-display {
+    @apply text-[42px] leading-[48px] font-semibold
+  }
 }
