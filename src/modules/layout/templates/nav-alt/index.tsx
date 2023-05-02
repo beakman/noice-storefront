@@ -49,6 +49,7 @@ function Categories() {
             category.category_children &&
             category.category_children.length > 0 && (
               <MenuItems
+                key={category.id}
                 name={category.name}
                 items={category.category_children}
               />
@@ -128,7 +129,6 @@ const NavAlt = () => {
                 minWidth: "100%",
               }}
               href="#"
-              key={index}
             >
               {item}
             </Link>
