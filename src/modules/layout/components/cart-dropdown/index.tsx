@@ -13,6 +13,9 @@ import { Fragment } from "react"
 import { HiOutlineShoppingBag } from "react-icons/hi"
 import { Badge } from "@nextui-org/react"
 
+const ConditionalWrapper = ({ condition, wrapper, children }: any) =>
+  condition ? wrapper(children) : children
+
 const CartDropdown = () => {
   const { cart, totalItems } = useCart()
   const items = useEnrichedLineItems()
@@ -23,11 +26,24 @@ const CartDropdown = () => {
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Link href="/cart" passHref legacyBehavior>
-          <Badge color="default" content={totalItems} placement="bottom-right">
-            <Popover.Button className="h-full">
-              <HiOutlineShoppingBag size={20} />
-            </Popover.Button>
-          </Badge>
+          <ConditionalWrapper
+            condition={totalItems > 0}
+            wrapper={(children: any) => (
+              <Badge
+                color="default"
+                content={totalItems}
+                placement="bottom-right"
+              >
+                {children}
+              </Badge>
+            )}
+          >
+            <Fragment>
+              <Popover.Button className="h-full">
+                <HiOutlineShoppingBag size={20} />
+              </Popover.Button>
+            </Fragment>
+          </ConditionalWrapper>
         </Link>
         <Transition
           show={state}
