@@ -29,8 +29,8 @@ const FooterNav = () => {
             <span className="text-base-semi">Quick links</span>
             <ul className="grid grid-cols-1 gap-y-2">
               {store.site.quick_links &&
-                store.site.quick_links.map((link: QuickLink) => (
-                  <li className="mb-0">
+                store.site.quick_links.map((link: QuickLink, index: number) => (
+                  <li className="mb-0" key={index}>
                     <a href={link.href} target={link.target} rel="noreferrer">
                       {link.name}
                     </a>

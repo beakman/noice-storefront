@@ -128,6 +128,7 @@ const NavAlt = () => {
                 minWidth: "100%",
               }}
               href="#"
+              key={index}
             >
               {item}
             </Link>
