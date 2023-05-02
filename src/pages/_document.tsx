@@ -1,4 +1,5 @@
 import { MEDUSA_BACKEND_URL } from "@lib/config"
+import { CssBaseline } from "@nextui-org/react"
 import Document, { Head, Html, Main, NextScript } from "next/document"
 
 class MyDocument extends Document {
@@ -11,10 +12,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href={`//${hostname}`} crossOrigin="true" />
           <link rel="dns-prefetch" href={`//${hostname}`} />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-            rel="stylesheet"
-          />
+          {CssBaseline.flush()}
         </Head>
         <body>
           <Main />

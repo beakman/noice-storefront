@@ -8,6 +8,8 @@ import { useRouter } from "next/router"
 import { useState } from "react"
 import { FieldValues, useForm } from "react-hook-form"
 
+const store = require("../../../../../store.config.json")
+
 interface RegisterCredentials extends FieldValues {
   first_name: string
   last_name: string
@@ -49,7 +51,9 @@ const Register = () => {
           <Spinner size={24} />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Become a Acme Member</h1>
+      <h1 className="text-large-semi uppercase mb-6">
+        Become a {store.site.name} Member
+      </h1>
       <p className="text-center text-base-regular text-gray-700 mb-4">
         Create your Acme Member profile, and get access to an enhanced shopping
         experience.
@@ -99,12 +103,12 @@ const Register = () => {
         )}
         <span className="text-center text-gray-700 text-small-regular mt-6">
           By creating an account, you agree to Acme&apos;s{" "}
-          <Link href="/content/privacy-policy">
-            <a className="underline">Privacy Policy</a>
+          <Link href="/content/privacy-policy" className="underline">
+            Privacy Policy
           </Link>{" "}
           and{" "}
-          <Link href="/content/terms-of-use">
-            <a className="underline">Terms of Use</a>
+          <Link href="/content/terms-of-use" className="underline">
+            Terms of Use
           </Link>
           .
         </span>
@@ -121,7 +125,7 @@ const Register = () => {
         .
       </span>
     </div>
-  )
+  );
 }
 
 export default Register

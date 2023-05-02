@@ -1,0 +1,28 @@
+.wavy {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);    
+}
+
+.wavy svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+    fill: #FFF;
+}
+
+.shape {
+    fill: #FFF;
+}
+
+.clipped {
+    -webkit-clip-path: url(#waves-angle-bottom-up);
+    clip-path: url(#waves-angle-bottom-up);
+    position: absolute;
+    inset: 0;
+}

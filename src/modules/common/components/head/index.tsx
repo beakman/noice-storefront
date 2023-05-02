@@ -1,6 +1,8 @@
 import NextHead from "next/head"
 import React from "react"
 
+const store = require("../../../../../store.config.json")
+
 type HeadProps = {
   title?: string
   description?: string | null
@@ -10,7 +12,9 @@ type HeadProps = {
 const Head: React.FC<HeadProps> = ({ title, description, image }) => {
   return (
     <NextHead>
-      <title>{title} | ACME</title>
+      <title>
+        {title} | {store.site.name}
+      </title>
       <meta itemProp="name" content={title} />
       {description && <meta itemProp="description" content={description} />}
       {image && <meta itemProp="image" content={image} />}

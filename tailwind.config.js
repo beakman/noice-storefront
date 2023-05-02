@@ -24,15 +24,17 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Inter",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Ubuntu",
+          "var(--sans-font)",
           "sans-serif",
         ],
+        serif: [
+          "var(--serif-font)",
+          "serif"
+        ],
+        display: [
+          "var(--display-font)",
+          "sans"
+        ]
       },
     },
   },

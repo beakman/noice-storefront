@@ -52,7 +52,7 @@ const CountrySelect = () => {
         }
       >
         <Listbox.Button className="py-1 w-full">
-          <div className="text-small-regular flex items-center gap-x-2 xsmall:justify-end">
+          <div className="text-small-regular flex items-center gap-x-2 xsmall:justify-start">
             <span>Shipping to:</span>
             {current && (
               <span className="text-small-semi flex items-center gap-x-2">
@@ -69,7 +69,7 @@ const CountrySelect = () => {
             )}
           </div>
         </Listbox.Button>
-        <div className="relative w-full min-w-[316px]">
+        <div className="relative w-full min-w-[216px]">
           <Transition
             show={state}
             as={Fragment}
